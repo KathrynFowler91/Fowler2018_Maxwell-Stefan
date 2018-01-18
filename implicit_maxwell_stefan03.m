@@ -1,6 +1,34 @@
-function [u_save, RN] = implicit_maxwell_stefan03_updated(varargin)
+function [u_save, RN] = implicit_maxwell_stefan03(varargin)
 
-% SOLVE THE DIFFUSION EQUATION ON A REGULAR GRID WITH NEUMANN BCs.
+%--------------------------------------------------------------------------
+%
+% A function to solve the diffusion equation on a spherical core shell 
+% model with neumann boundary conditions. Fick's second law is solved using
+% the backward Euler method of finite differences and the non-ideal effects 
+% of diffusion are included using the Maxwell-Stefan framework, relating 
+% diffusion flux to gradient in activity coefficients. The UNIFAC group
+% contribution model is used to estimate the activity coefficients.
+%
+% Call the model by typing [u_save, RN] = implicit_maxwell_stefan03().
+% Input parameters maybe changed below in the 'setting up parameters 
+% section' or using 'implicit_maxwell_stefan_runscript'.
+%
+% Outputs variables are:
+% u_save = concentration (or molar density) for a given shell, timestep and 
+%          component.
+% RN = inital shell boundaries as determined from the number of shells and
+%      size of grid.
+%
+% Other functions required to run the script include:
+%   outer_shell_equilibration.m
+%   outer_shell_redistribution.m
+%   UFC_datamain.m
+%   UFC_dataqi_v1.m
+%   UFC_interact_params_v1.m
+%   UNIFAC_gamma.m
+%
+% Details of the calculations contained within this script can be found: 
+% https://www.atmos-chem-phys-discuss.net/acp-2017-424/#discussion
 
 warning off;
 
