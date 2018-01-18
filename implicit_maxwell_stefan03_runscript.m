@@ -2,31 +2,33 @@
 
 %--------------------------------------------------------------------------
 
-fickian = false;            % true==fickian / false==MS
+fickian = true;             % true==fickian / false==MS
 diffusion = 'darken';       % 'darken' / 2 component 'vignes'
 
 n_components = 2;
-dt = 10.^(-9);             % time-step
-ip = 1e2;                   % number of grid points
-ntm = 1e3;                  % number of time steps
+time = 1e-5;                % time
+ntm = 5e3;                  % number of time steps
+dt = time./(ntm);           % time-step
+time = (0:dt:time);
 
-DSelf = 1e-18;
-aerosol = {'Sucrose'}; % see MS variable switch (only for 2 components)
-CNum = 6;
-
-r0 = 0;                     % lowest radius edge
-rN = 1.2e-7;                % upper radius edge
 R = 1e-7;                   % initial radius of aerosol
+r0 = 0;                     % lowest radius edge
+rN = 1.5.*R;                % upper radius edge
+ip = 1e2;                   % number of shells grid points
+
+DSelf = 1e-20;
+aerosol = {'Sucrose'};      % see MS variable switch (only for 2 components)
+CNum = 6;
 T = 293.15;                 % kelvin (20degreeC)
 
 % initial particle conditions - to change initial concentration profile see below
 Xw_init = 0.1;              % initial water mole fraction
 Xw_shell = zeros(ntm,1);
-Xw_shell(:) = 0.8;
+Xw_shell(:) = 0.8;          % outer shell equilibration for all time steps
 
 %--------------------------------------------------------------------------
 
-[u_save, RN] = implicit_maxwell_stefan03_updated(...
+[u_save, RN] = implicit_maxwell_stefan03(...
     fickian,...
     diffusion,...
     n_components,...
