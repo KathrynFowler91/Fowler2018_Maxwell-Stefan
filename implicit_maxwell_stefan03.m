@@ -29,6 +29,8 @@ function [u_save, RN] = implicit_maxwell_stefan03(varargin)
 %
 % Details of the calculations contained within this script can be found: 
 % https://www.atmos-chem-phys-discuss.net/acp-2017-424/#discussion
+%
+% Copyright (C) 2018  Kathryn Fowler
 
 warning off;
 
