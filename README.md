@@ -10,7 +10,7 @@ Correspondence: kathryn.fowler@manchester.ac.uk / p.connolly@manchester.ac.uk
 
 This is the first time the Maxwell-Stefan framework has been applied to an atmospheric aerosol core-shell model and shows that there is a complex interplay between the viscous and solubility effects on aerosol composition. Understanding aerosol composition is essential to accurately model their interactions within atmospheric systems. We use simple binary systems to demonstrate how viscosity and solubility both play a role in affecting the rate of diffusion through aerosol particles.
 
-The complete article can be found: <https://www.atmos-chem-phys-discuss.net/acp-2017-424/#discussion>
+The complete article can be found: <https://www.atmos-chem-phys.net/18/1629/2018/acp-18-1629-2018.html>
 
 ### Description
 
