@@ -57,7 +57,7 @@ If you have any further issues using the model please contact either Kathryn Fow
 
 ### License
 
-Copyright (C) 2018  Kathryn Fowler
+Copyright (C) 2018  Kathryn Fowler and Paul Connolly
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
 
